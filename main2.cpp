@@ -23,7 +23,7 @@ double calc_fail_rate_correction( float load_coef, float temp )
 void calc_trains_packet( double current, std::vector< std::pair<double, double>  > & value, int max_trains_packet = 20, double move_time = 60.0 )
 {
     Sci::dt dt_06_1000(40, 390, 0.0172, 288, 7.472, 0.58, 70, 480, 0.019, 24.3, 1670, 47.0, 480.0, 0.76, 0.258, 1.3, 0.86, 0.2585, 0.8, 2000 );
-    Sci::heat_transfer_data htd( 310.0, 310.0, 310.0, 8.35, 8.7, 800.0, 273.0);
+    Sci::heat_transfer_data htd( 310.0, 310.0, 310.0, 8.35, 1/0.115, 800.0, 273.0);
     Sci::heat_condition hc( 273.0, 273.0, 273.0, 273.0 );
     Sci::dt_heat_transfer dt_temp_calc_(dt_06_1000, htd, hc );
 
@@ -68,18 +68,6 @@ int main ()
         std::cout << one[i].first << "; " << one[i].second << "; " << min6[i].first << "; " << min6[i].second << "; " << min8[i].first << "; " << min8[i].second << "; " << min10[i].first << "; " << min10[i].second << "; " << min12[i].first << "; " << min12[i].second << std::endl;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-return 0;
+    return 0;
 }
 

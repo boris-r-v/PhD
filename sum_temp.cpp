@@ -11,7 +11,8 @@ void Sci::heat_transfer_data::h_coil_to_metal_calc( double Toil )
 
 void Sci::heat_transfer_data::h_body_to_air( double Tbody, double Tair )
 {
-    h_body_air_=2.1+2.5*std::pow((Tbody - Tair),0.25)*std::pow((Tair/Tbody), 0.25);
+    //h_body_air_=2.1+2.5*std::pow((Tbody - Tair),0.25)*std::pow((Tair/Tbody), 0.25);
+    h_body_air_ = 2.1+1.51+1.2834*std::log(Tbody-273);
 }
 
 
